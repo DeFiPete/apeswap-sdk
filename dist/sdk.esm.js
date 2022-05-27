@@ -70,11 +70,21 @@ function _defineProperties(target, props) {
 function _createClass(Constructor, protoProps, staticProps) {
   if (protoProps) _defineProperties(Constructor.prototype, protoProps);
   if (staticProps) _defineProperties(Constructor, staticProps);
+<<<<<<< HEAD
+=======
+  Object.defineProperty(Constructor, "prototype", {
+    writable: false
+  });
+>>>>>>> e2f80cc19e65daca949f2325198fedcc61766bdf
   return Constructor;
 }
 
 function _extends() {
+<<<<<<< HEAD
   _extends = Object.assign || function (target) {
+=======
+  _extends = Object.assign ? Object.assign.bind() : function (target) {
+>>>>>>> e2f80cc19e65daca949f2325198fedcc61766bdf
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
 
@@ -87,29 +97,48 @@ function _extends() {
 
     return target;
   };
+<<<<<<< HEAD
 
+=======
+>>>>>>> e2f80cc19e65daca949f2325198fedcc61766bdf
   return _extends.apply(this, arguments);
 }
 
 function _inheritsLoose(subClass, superClass) {
   subClass.prototype = Object.create(superClass.prototype);
   subClass.prototype.constructor = subClass;
+<<<<<<< HEAD
   subClass.__proto__ = superClass;
 }
 
 function _getPrototypeOf(o) {
   _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+=======
+
+  _setPrototypeOf(subClass, superClass);
+}
+
+function _getPrototypeOf(o) {
+  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) {
+>>>>>>> e2f80cc19e65daca949f2325198fedcc61766bdf
     return o.__proto__ || Object.getPrototypeOf(o);
   };
   return _getPrototypeOf(o);
 }
 
 function _setPrototypeOf(o, p) {
+<<<<<<< HEAD
   _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
     o.__proto__ = p;
     return o;
   };
 
+=======
+  _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+>>>>>>> e2f80cc19e65daca949f2325198fedcc61766bdf
   return _setPrototypeOf(o, p);
 }
 
@@ -119,7 +148,11 @@ function _isNativeReflectConstruct() {
   if (typeof Proxy === "function") return true;
 
   try {
+<<<<<<< HEAD
     Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));
+=======
+    Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
+>>>>>>> e2f80cc19e65daca949f2325198fedcc61766bdf
     return true;
   } catch (e) {
     return false;
@@ -128,7 +161,11 @@ function _isNativeReflectConstruct() {
 
 function _construct(Parent, args, Class) {
   if (_isNativeReflectConstruct()) {
+<<<<<<< HEAD
     _construct = Reflect.construct;
+=======
+    _construct = Reflect.construct.bind();
+>>>>>>> e2f80cc19e65daca949f2325198fedcc61766bdf
   } else {
     _construct = function _construct(Parent, args, Class) {
       var a = [null];
@@ -207,6 +244,7 @@ function _arrayLikeToArray(arr, len) {
 }
 
 function _createForOfIteratorHelperLoose(o, allowArrayLike) {
+<<<<<<< HEAD
   var it;
 
   if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {
@@ -229,6 +267,26 @@ function _createForOfIteratorHelperLoose(o, allowArrayLike) {
 
   it = o[Symbol.iterator]();
   return it.next.bind(it);
+=======
+  var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"];
+  if (it) return (it = it.call(o)).next.bind(it);
+
+  if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
+    if (it) o = it;
+    var i = 0;
+    return function () {
+      if (i >= o.length) return {
+        done: true
+      };
+      return {
+        done: false,
+        value: o[i++]
+      };
+    };
+  }
+
+  throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+>>>>>>> e2f80cc19e65daca949f2325198fedcc61766bdf
 }
 
 // see https://stackoverflow.com/a/41102306
